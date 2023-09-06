@@ -45,6 +45,9 @@ namespace FavoriteColorAndNumber
     using ColorsAlias = ColorsAndNumbers.Colors;
 
     // for now, every class should have a static keyword
+    /* Class: Program
+     * Author: Katie Bogart
+     */
     static internal class Program
     {
         // methods consist of the static keyword a return type, a method name, and a list of paramaters
@@ -71,7 +74,7 @@ namespace FavoriteColorAndNumber
             string sFavColor = "";
             string sFavNumber = "";
             bool bValid = false;
-            int nFavNumber = 0;
+            int? nFavNumber = null;
 
             anotherInt = myInt;
 
@@ -104,12 +107,86 @@ namespace FavoriteColorAndNumber
                 {
                     Console.WriteLine("Please enter an integer.");
                 }
-            }
+
+            do
+            {
+                sFavNumber = Console.ReadLine();
+                try
+                {
+                    nFavNumber = Convert.ToInt32(sFavNumber);
+                }
+                catch
+                {
+                    Console.WriteLine("Please enter an integer: ");
+                }
+            } while (nFavNumber == null);
+
+            do
+            {
+                sFavNumber = Console.ReadLine();
+                try
+                {
+                    nFavNumber = int.Parse(sFavNumber);
+                }
+                catch
+                {
+                    Console.WriteLine("Please enter an integer: ");
+                }
+            } while (nFavNumber == null);
+
+            int nFavNumberInt = 0;
+            do
+            {
+                sFavNumber = Console.ReadLine();
+                bValid = int.TryParse(sFavNumber, out nFavNumberInt);
+
+                if (!bValid)
+                {
+                    Console.WriteLine("Please enter an integer: ");
+                }
+                
+            } while (nFavNumber == null);
+
+            nFavNumber = nFavNumberInt;
+
+            // set favorite color to lower case
+            // this won't change the string contents
+            sFavColor.ToLower();
+
+            // change the console output color to match their favorite color
+            switch (sFavColor.ToLower())
+            {
+                case "red":
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    break;
+
+                case "blue":
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    break;
+
+                case "green":
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    break;
+
+                default:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    break;
+             }
+
+            int y = 0;
+            int x = 5;
+
+            y = ++x;    // y = 6;  x = 6;
+            y = x++;    // y = 5;  x = 6;
 
             // a loop that outputs their favorite color their favorite number of times
             for (int i = 0; i < nFavNumber; i++)
             {
-                Console.WriteLine(sFavColor);
+                Console.WriteLine("Your favorite color is " + sFavColor + "!");
+                Console.WriteLine($"Your favorite color is {sFavColor} !");
+                Console.WriteLine("Your {0} favorite color is {0}{1}", "most", sFavColor, "!");
+
+                // Console.WriteLine("5 + 5 = " + (x + x));
             }
         }
     }
