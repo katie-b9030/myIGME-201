@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace DataTypeConversion
 {
-    static internal class Program
+    static internal partial class Program
     {
+        static int MyAdder (int a, int b)
+        {
+            return 1;
+        }
+
+        static double MyAdder (double a, double b)
+        {
+            return 1;
+        }
         static void Main(string[] args)
         {
             double doubleNum = 9999.99;
@@ -26,8 +35,6 @@ namespace DataTypeConversion
             longInt = shortInt;
             uintNum = byteNum;
 
-            byteNum = shortInt;
-
             //explicit casting
             byteNum = (byte)shortInt;
 
@@ -35,11 +42,23 @@ namespace DataTypeConversion
             {
                 byteNum = checked((byte)shortInt);
                 byteNum = Convert.ToByte(shortInt);
+
+                byteNum = byte.Parse(shortInt.ToString());
+                bool bValid = byte.TryParse(shortInt.ToString(), out byteNum);
             }
             catch
             {
                 // output message that data wll be lost
+                Console.WriteLine("Data was lost!");
             }
+
+            // int/int = int
+            doubleNum = (double)longInt / shortInt; // answer will be int unless casted
+
+            shortInt = (short)3.94; // short int
+            MyAdder(shortInt, shortInt);
+            MyAdder (doubleNum, shortInt);
+            MyDivider(byteNum, byteNum);
         }
     }
 }
