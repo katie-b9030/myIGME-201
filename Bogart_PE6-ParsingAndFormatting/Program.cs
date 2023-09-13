@@ -27,7 +27,7 @@ namespace Bogart_PE6_ParsingAndFormatting
             bool guessedCorrectly = false;
             int randomNumber = rand.Next(0, 101);
             // print the number for testing purposes
-            Console.WriteLine("Number to guess: " +  randomNumber);
+            Console.WriteLine("Number to guess: " + randomNumber);
             // give the user 8 tries to guess the number
             for (int i = 1; i <= 8; i++)
             {
@@ -37,7 +37,7 @@ namespace Bogart_PE6_ParsingAndFormatting
                     while (userGuess == null)
                     {
                         // prompt the user to guess
-                        Console.WriteLine("Turn #" +  i + ": Enter your guess: ");
+                        Console.WriteLine("Turn #" + i + ": Enter your guess: ");
                         // parse the user value and check if it's valid
                         try
                         {
@@ -76,3 +76,4 @@ namespace Bogart_PE6_ParsingAndFormatting
         }
     }
 }
+

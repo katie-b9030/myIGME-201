@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bogart_PE6-ParsingAndFormatting", "Bogart_PE6-ParsingAndFormatting.csproj", "{27A667E7-F5B1-4826-9987-E5C6DC304840}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bogart_PE6-ParsingAndFormatting", "Bogart_PE6-ParsingAndFormatting.csproj", "{F57E4FAD-8C55-4FCA-B74B-69000E944975}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{27A667E7-F5B1-4826-9987-E5C6DC304840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27A667E7-F5B1-4826-9987-E5C6DC304840}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27A667E7-F5B1-4826-9987-E5C6DC304840}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27A667E7-F5B1-4826-9987-E5C6DC304840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F57E4FAD-8C55-4FCA-B74B-69000E944975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F57E4FAD-8C55-4FCA-B74B-69000E944975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F57E4FAD-8C55-4FCA-B74B-69000E944975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F57E4FAD-8C55-4FCA-B74B-69000E944975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9D5573B2-B688-49CA-B6D3-ADCACB399020}
+		SolutionGuid = {FE1064B4-574A-40CB-B869-8A442E2FB774}
 	EndGlobalSection
 EndGlobal

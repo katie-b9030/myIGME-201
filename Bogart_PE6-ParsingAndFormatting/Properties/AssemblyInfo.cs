@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Bogart_PE5-ParsingAndFormatting")]
+[assembly: AssemblyTitle("Bogart_PE6-ParsingAndFormatting")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Bogart_PE5-ParsingAndFormatting")]
+[assembly: AssemblyProduct("Bogart_PE6-ParsingAndFormatting")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("27a667e7-f5b1-4826-9987-e5c6dc304840")]
+[assembly: Guid("f57e4fad-8c55-4fca-b74b-69000e944975")]
 
 // Version information for an assembly consists of the following four values:
 //
