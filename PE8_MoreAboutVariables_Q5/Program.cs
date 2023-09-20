@@ -14,12 +14,51 @@ namespace PE8_MoreAboutVariables_Q5
     static internal class Program
     {
         /* Method: Main
-         * Purpose: 
+         * Purpose: create a 2D array to hold x, y, and z
+         *          calculate and store the values of z
+         *          print the values of z
          * Restrictions: None
          */
         static void Main(string[] args)
         {
+            // create an array to store the values
+            double[,] xyzVals = new double[3, 21*31];
+            int xCols = 0;
+            int yCols = 0;
+            int zCols = 0;
 
+            // input the values of x
+            for (double x = -1; x <= 1; x += 0.1)
+            {
+                xyzVals[0, xCols] = x;
+                xCols++;
+            }
+
+            // input the values of y
+            for (double y = 1; y <= 4; y += 0.1)
+            {
+                xyzVals[1, yCols] = y;
+                yCols++;
+            }
+
+            // calculate and store the values of z
+            for (int x = 0; x < xCols; x++)
+            {
+                for (int y = 0; y < yCols; y++)
+                {
+                    xyzVals[2, zCols] = (3*Math.Pow(xyzVals[1,y], 2) + 2*(xyzVals[0, x]) - 1);
+                }
+            }
+
+            // print the array
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < zCols; j++)
+                {
+                    Console.WriteLine("Here is your array: ");
+                    Console.WriteLine(xyzVals[i, j]);
+                }
+            }
         }
     }
 }
