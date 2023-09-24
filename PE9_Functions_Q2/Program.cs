@@ -144,132 +144,133 @@ namespace PE9_Functions_Q2
             // ask each question
             for (nCntr = 1; nCntr <= nQuestions; nCntr++)
             {
-                    // generate a random number between 0 inclusive and 3 exclusive to get the operation
-                    nOp = rand.Next(0, 3);
 
-                    val1 = rand.Next(0, nMaxRange) + nMaxRange;
-                    val2 = rand.Next(0, nMaxRange);
+                // generate a random number between 0 inclusive and 3 exclusive to get the operation
+                nOp = rand.Next(0, 3);
 
-                    // if either argument is 0, pick new numbers
-                    if (val1 == 0 || val2 == 0)
-                    {
-                        --nCntr;
-                        continue;
-                    }
+                val1 = rand.Next(0, nMaxRange) + nMaxRange;
+                val2 = rand.Next(0, nMaxRange);
+
+                // if either argument is 0, pick new numbers
+                if (val1 == 0 || val2 == 0)
+                {
+                    --nCntr;
+                    continue;
+                }
 
 
-                    switch (nOp)
-                    {
-                        case 0:
-                            nAnswer = val1 + val2;
-                            sQuestions = $"Question #{nCntr + 1}: {val1 + " (this first value is really hard)"} + {val2} ==> {val1 + val2} ";
-                            sQuestions = "Question #" + (nCntr + 1) + ": " + val1 + " + " + val2 + " ==> " + (val1 + val2) + " ";
-                            break;
-                        case 1:
-                            nAnswer = val1 - val2;
-                            sQuestions = $"Question #{nCntr + 1}: {val1} - {val2} ==> ";
-                            break;
-                        case 2:
-                            nAnswer = val1 * val2;
-                            sQuestions = $"Question #{nCntr + 1}: {val1} * {val2} ==> ";
-                            break;
-                    }
-
-                    // if nOp == 0, then addition
-                    if (nOp == 0)
-                    {
+                switch (nOp)
+                {
+                    case 0:
                         nAnswer = val1 + val2;
-                        sQuestions = $"Question #{nCntr + 1}: {val1} + {val2} ==> ";
-                    }
-                    // if nOp == 1, then subtraction
-                    else if (nOp == 1)
-                    {
+                        sQuestions = $"Question #{nCntr + 1}: {val1 + " (this first value is really hard)"} + {val2} ==> {val1 + val2} ";
+                        sQuestions = "Question #" + (nCntr + 1) + ": " + val1 + " + " + val2 + " ==> " + (val1 + val2) + " ";
+                        break;
+                    case 1:
                         nAnswer = val1 - val2;
                         sQuestions = $"Question #{nCntr + 1}: {val1} - {val2} ==> ";
-                    }
-                    // else multiplication
-                    else
-                    {
+                        break;
+                    case 2:
                         nAnswer = val1 * val2;
                         sQuestions = $"Question #{nCntr + 1}: {val1} * {val2} ==> ";
-                    }
+                        break;
+                }
 
-                    bValid = false;
-                    timeOutTimer = new Timer(5000);
+                // if nOp == 0, then addition
+                if (nOp == 0)
+                {
+                    nAnswer = val1 + val2;
+                    sQuestions = $"Question #{nCntr}: {val1} + {val2} ==> ";
+                }
+                // if nOp == 1, then subtraction
+                else if (nOp == 1)
+                {
+                    nAnswer = val1 - val2;
+                    sQuestions = $"Question #{nCntr}: {val1} - {val2} ==> ";
+                }
+                // else multiplication
+                else
+                {
+                    nAnswer = val1 * val2;
+                    sQuestions = $"Question #{nCntr}: {val1} * {val2} ==> ";
+                }
 
-                    // Timer calls the Timer.Elapsed event handler when the time elapses
-                    // The Timer.Elapsed event handler uses a delegate function with the following signature:
-                    //        public delegate void ElapsedEventHandler(object sender, ElapsedEventArgs e);
-                    // This delegate method type is already defined for us by .NET
-                    timeOutTimer.Elapsed += new ElapsedEventHandler(TimesUp);
+                bValid = false;
+                timeOutTimer = new Timer(5000);
 
-                    // display the question and prompt for the answer until they enter a valid number
-                    do
+                // Timer calls the Timer.Elapsed event handler when the time elapses
+                // The Timer.Elapsed event handler uses a delegate function with the following signature:
+                //        public delegate void ElapsedEventHandler(object sender, ElapsedEventArgs e);
+                // This delegate method type is already defined for us by .NET
+                timeOutTimer.Elapsed += new ElapsedEventHandler(TimesUp);
+
+                    // start the timer just before the user is prompted for the answer
+                    // the timer process will be a second process running at the same time as this program
+                    // it will countdown from the value initialized in line #48 and call the delegate method(s)
+                    // associated with the Elapsed event handler as set in line #59
+                timeOutTimer.Start();
+
+                // display the question and prompt for the answer until they enter a valid number
+                do
+                {
+                    Console.WriteLine(sQuestions);
+
+                    sResponse = Console.ReadLine();
+
+                    // always stop the timer directly after the Console.ReadLine()
+                    // otherwise the timer will keep running even if the user entered the correct answer in time
+                    // and the TimesUp() method will be called
+                    timeOutTimer.Stop();
+
+                    // can use either TryParse
+                    bValid = int.TryParse(sResponse, out nResponse);
+
+                    if (!bValid)
                     {
-                        Console.WriteLine(sQuestions);
-
-                        // start the timer just before the user is prompted for the answer
-                        // the timer process will be a second process running at the same time as this program
-                        // it will countdown from the value initialized in line #48 and call the delegate method(s)
-                        // associated with the Elapsed event handler as set in line #59
-                        timeOutTimer.Start();
-
-                        sResponse = Console.ReadLine();
-
-                        // can use either TryParse
-                        bValid = int.TryParse(sResponse, out nResponse);
-                        timeOutTimer.Stop();
-
-                        if (!bValid)
-                        {
-                            Console.WriteLine("Please enter an integer");
-                        }
-
-
-                        // or try/catch with Parse() or Convert.ToInt32()
-                        try
-                        {
-                            nResponse = int.Parse(sResponse);
-                            nResponse = Convert.ToInt32(sResponse);
-                            bValid = true;
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Please enter an integer");
-                            bValid = false;
-                        }
-                    } while (!bValid);
-
-                    // if response == answer, output flashy reward and increment # correct
-                    if (nResponse == nAnswer && !bTimeOut)
-                    {
-                        Console.BackgroundColor = ConsoleColor.Blue;
-                        Console.ForegroundColor = ConsoleColor.Magenta;
-                        Console.WriteLine("Well done, {0}!!", myName);
-                        ++nCorrect;
-
-                        // always stop the timer directly after the Console.ReadLine()
-                        // otherwise the timer will keep running even if the user entered the correct answer in time
-                        // and the TimesUp() method will be called
+                        Console.WriteLine("Please enter an integer");
                         timeOutTimer.Stop();
                     }
-                    // else output stark answer
-                    else
+
+
+                    // or try/catch with Parse() or Convert.ToInt32()
+                    try
                     {
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("I'm sorry {0}, the answer is {1}", myName, nAnswer);
+                        nResponse = int.Parse(sResponse);
+                        nResponse = Convert.ToInt32(sResponse);
+                        bValid = true;
                     }
+                    catch
+                    {
+                        Console.WriteLine("Please enter an integer");
+                        bValid = false;
+                    }
+                } while (!bValid);
 
-
-
-                    // restore the screen colors
+                // if response == answer, output flashy reward and increment # correct
+                if (nResponse == nAnswer && !bTimeOut)
+                {
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("Well done, {0}!!", myName);
+                    nCorrect ++;
+                }
+                // else output stark answer
+                else if (!bTimeOut)
+                {
                     Console.BackgroundColor = ConsoleColor.Black;
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("I'm sorry {0}, the answer is {1}", myName, nAnswer);
+                }
 
-                    Console.WriteLine();
 
-                
+
+                // restore the screen colors
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+
+                Console.WriteLine();
+
+
             }
 
             Console.WriteLine();
@@ -277,7 +278,7 @@ namespace PE9_Functions_Q2
             // output how many they got correct and their score
 
 
-            Console.WriteLine();
+            Console.WriteLine("You entered " + nCorrect + " correct answers. Your score is " + nCorrect + "/" + (nCntr - 1));
 
             do
             {
