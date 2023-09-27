@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,9 +33,14 @@ namespace MyEditor
             this.mSSansSerifToolStripMenuItem.Click += new EventHandler(MSSansSerifToolStripMenuItem__Click);
             this.timesNewRomanToolStripMenuItem.Click += new EventHandler(TimesNewRomanToolStripMenuItem__Click);
 
+            this.testToolStripButton.Click += new EventHandler(TestToolStripButton__Click);
+
             this.toolStrip.ItemClicked += new ToolStripItemClickedEventHandler(ToolStrip__ItemClicked);
 
             this.richTextBox.SelectionChanged += new EventHandler(RichTextBox__SelectionChanged);
+
+            this.countdownLabel.Visible = false;
+            this.timer.Tick += new EventHandler(Timer__Tick);
             
             this.Text = "MyEditor";
         }
@@ -43,6 +49,43 @@ namespace MyEditor
         {
             richTextBox.Clear();
             this.Text = "MyEditor";
+        }
+
+        private void TestToolStripButton__Click(object sender, EventArgs e)
+        {
+            this.timer.Interval = 500;
+
+            this.toolStripProgressBar.Value = 60;
+
+            this.countdownLabel.Text = "3";
+            this.countdownLabel.Visible = true;
+            this.richTextBox.Visible = false;
+
+            for (int i = 3; i > 0; i--)
+            {
+                this.countdownLabel.Text = i.ToString();
+                this.Refresh();
+                Thread.Sleep(1000);
+            }
+
+            this.richTextBox.Clear();
+
+            this.countdownLabel.Visible = false;
+            this.richTextBox.Visible = true;
+
+            this.timer.Start();
+        }
+
+        private void Timer__Tick(object sender, EventArgs e)
+        {
+            this.toolStripProgressBar.Value--;
+            if (this.toolStripProgressBar.Value == 0)
+            {
+                this.timer.Stop();
+
+                string performance = "Congratulations! You typed " + Math.Round(this.richTextBox.TextLength / 30.0, 2) + " letters per second!";
+                MessageBox.Show(performance);
+            }
         }
 
         private void BoldToolStripMenuItem__Click(object sender, EventArgs e)
@@ -235,6 +278,11 @@ namespace MyEditor
         }
 
         private void richTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
