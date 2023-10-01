@@ -43,13 +43,14 @@ namespace Unit1Exam_Q12
             }
         }
 
-        /* Method: Main
+        /* Method: GiveRaise
          * Purpose: if user's name same as your name, give raise
          *          if user's name different than your name, don't give raise
          * Restrictions: None
          */
         static bool GiveRaise(string name, ref double salary)
         {
+            // check if user's name is your name
             if (name.ToLower() == "katie")
             {
                 salary += 19999.99;
