@@ -16,6 +16,9 @@ namespace Unit1ExamTests
             byteVal = Convert.ToByte(shortVal);
             Console.WriteLine("byteVal = {0}", byteVal);
 
+
+
+
         }
     }
 }

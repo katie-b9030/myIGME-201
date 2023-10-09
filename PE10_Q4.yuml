@@ -1,0 +1,14 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+[+A:HotDrink|+milk:bool;+sugar:bool|+Drink():bool:v;+AddMilk():v;+AddSugar():v|+(milk:bool,sugar:bool)]
+[+I:ICup|+color:string;+volume:int|+Refill():bool;+Wash()|+(color:string,volume:int)]
+
+[+CupOfCoffee|+beanType:string|+Refill():bool:v;+Wash():v|+(milk:bool,sugar:bool,beanType:string):base(milk,sugar)]
+[+A:HotDrink]<-.-[+CupOfCoffee]
+[+I:ICup]^[+CupOfCoffee]
+
+[+CupOfTea|+leafType:string|+Refill():bool:v;+Wash():v|+(milk:bool,sugar:bool,leafType:string):base(milk,sugar)]
+[+A:HotDrink]<-.-[+CupOfTea]
+[+I:ICup]^[+CupOfTea]

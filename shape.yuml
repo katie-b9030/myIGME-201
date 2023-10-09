@@ -1,0 +1,15 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+[+I:IDrawObject|DrawMe()]
+
+[+Blood||+DrawMe():v]
+[+I:IDrawObject]^[+Blood]
+
+[+A:Shape|+PI:double;=x:double;=y:double;-myInt:int|+Area():double:v;+DrawMe():a|+();+(x:double,y:double)]
+[+I:IDrawObject]^[+A:Shape]
+
+[+Circle||+Area():double:o;+DrawMe():o|+(r:double):base(r,0)]
+[+A:Shape]<-.-[+Circle]
+[+I:IDrawObject]^[+Circle]
