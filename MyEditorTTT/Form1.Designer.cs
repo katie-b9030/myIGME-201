@@ -83,6 +83,7 @@
             this.menuStrip2.Size = new System.Drawing.Size(800, 24);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.Visible = false;
             // 
             // fileToolStripMenuItem
             // 
@@ -172,7 +173,7 @@
             this.colorToolStripButton,
             this.fontToolStripButton,
             this.testToolStripButton});
-            this.toolStrip.Location = new System.Drawing.Point(7, 0);
+            this.toolStrip.Location = new System.Drawing.Point(3, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(156, 25);
             this.toolStrip.TabIndex = 0;
@@ -234,14 +235,14 @@
             // mSSansSerifToolStripMenuItem
             // 
             this.mSSansSerifToolStripMenuItem.Name = "mSSansSerifToolStripMenuItem";
-            this.mSSansSerifToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mSSansSerifToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.mSSansSerifToolStripMenuItem.Text = "MS Sans Serif";
             this.mSSansSerifToolStripMenuItem.ToolTipText = "MS Sans Serif";
             // 
             // timesNewRomanToolStripMenuItem
             // 
             this.timesNewRomanToolStripMenuItem.Name = "timesNewRomanToolStripMenuItem";
-            this.timesNewRomanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timesNewRomanToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.timesNewRomanToolStripMenuItem.Text = "Times New Roman";
             this.timesNewRomanToolStripMenuItem.ToolTipText = "Times New Roman";
             // 
@@ -261,7 +262,7 @@
             this.richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox.Location = new System.Drawing.Point(0, 0);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(800, 379);
+            this.richTextBox.Size = new System.Drawing.Size(800, 403);
             this.richTextBox.TabIndex = 0;
             this.richTextBox.Text = "";
             this.richTextBox.TextChanged += new System.EventHandler(this.richTextBox_TextChanged);
@@ -317,11 +318,11 @@
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.countdownLabel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.richTextBox);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 379);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 403);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 24);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(800, 426);
+            this.toolStripContainer1.Size = new System.Drawing.Size(800, 450);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -353,7 +354,7 @@
             this.countdownLabel.ForeColor = System.Drawing.Color.Red;
             this.countdownLabel.Location = new System.Drawing.Point(0, 0);
             this.countdownLabel.Name = "countdownLabel";
-            this.countdownLabel.Size = new System.Drawing.Size(800, 379);
+            this.countdownLabel.Size = new System.Drawing.Size(800, 403);
             this.countdownLabel.TabIndex = 1;
             this.countdownLabel.Text = "3";
             this.countdownLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
