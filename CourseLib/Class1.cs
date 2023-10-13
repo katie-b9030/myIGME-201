@@ -71,6 +71,11 @@ namespace CourseLib
                 }
             }
         }
+
+        /* Method: Courses
+         * Purpose: creates a list of 100 courses
+         * Restrictions: None
+         */
         public Courses()
         {
             Course thisCourse;
@@ -161,6 +166,6 @@ namespace CourseLib
     {
         public DateTime startTime;
         public DateTime endTime;
-        List<DayOfWeek> daysOfWeek = new List<DayOfWeek>();
+        public List<DayOfWeek> daysOfWeek = new List<DayOfWeek>();
     }
 }

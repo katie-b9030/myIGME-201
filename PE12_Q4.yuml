@@ -2,6 +2,6 @@
 // {generate:true}
 // {direction:topDown}
 
-[+MyClass|-myString:string|+GetString:string:v|]
+[+MyClass|-myString:string|+GetString:string:v;+MyString:string|]
 [+MyDerivedClass||+GetString:string|]
 [+MyClass] <- [+MyDerivedClass]
