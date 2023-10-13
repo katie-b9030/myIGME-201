@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bogart_PE12_Q3
+namespace Bogart_PE12
 {
 
-    /* Class: Program
-     * Author: Katie Bogart
-     * Purpose: 
-     * Restrictions: None
-     */
+   /* Class: Program
+    * Author: Katie Bogart
+    * Purpose: 
+    * Restrictions: None
+    */
     static internal class Program
     {
 
@@ -25,5 +25,4 @@ namespace Bogart_PE12_Q3
         }
     }
 
-    public class MyDerivedClass
 }

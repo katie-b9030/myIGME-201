@@ -7,24 +7,6 @@ using System.Threading.Tasks;
 namespace Bogart_PE12
 {
 
-    /* Class: Program
-     * Author: Katie Bogart
-     * Purpose: 
-     * Restrictions: None
-     */
-    static internal class Program
-    {
-
-        /* Method: Main
-         * Purpose: 
-         * Restrictions: None
-         */
-        static void Main(string[] args)
-        {
-
-        }
-    }
-
     /* Class: MyClass
      * Author: Katie Bogart
      * Purpose: returns a string
@@ -34,7 +16,7 @@ namespace Bogart_PE12
     {
         private string myString;
 
-        /* Method: Main
+        /* Method: MyString
          * Purpose: write-only method
          *          sets the value of mystring to the user given value
          * Restrictions: None
@@ -47,13 +29,41 @@ namespace Bogart_PE12
             }
         }
 
-        /* Method: Main
+        /* Method: GetString
          * Purpose: returns the private string in the class
          * Restrictions: None
          */
         public virtual string GetString()
         {
             return myString;
+        }
+    }
+
+    /* Class: MyDerivedClass
+     * Author: Katie Bogart
+     * Purpose: returns the string from the base class
+     * Restrictions: None
+     */
+    public class MyDerivedClass : MyClass
+    {
+
+        /* Method: GetString
+         * Purpose: returns the string in the base class with appended text
+         * Restrictions: None
+         */
+        public override string GetString()
+        {
+            return base.GetString() + " (output from the derived class)";
+        }
+
+        /* Method: Main
+         * Purpose: returns the string in the base class with appended text
+         * Restrictions: None
+         */
+        public static void Main(string[] args)
+        {
+            MyDerivedClass myDerivedClass = new MyDerivedClass();
+            Console.WriteLine(myDerivedClass.GetString());
         }
     }
 }
