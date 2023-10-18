@@ -1,0 +1,45 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+[+NavBar|+quote:string;+deadlines:SortedList<DateTime, Deadline>;+toDos:ToDoList|(quote:string);(quote:string, deadlines:SortedList<DateTime, Deadline>);(quote:string, toDos:ToDoList);(quote:string, deadlines:SortedList<DateTime, Deadline>, toDos:ToDoList)]
+[+Agenda||+AddAssignment();+AddDeadline()]
+[+FinanceTracker||+AddAccount();+AddBudget();+AddPayment();+AddDueDate()]
+[+HabitTracker||+AddHabit();+DailyHabitComplete()]
+[+MealPlanner||+AddMeal();+AddToGroceries()]
+
+[+ToDoList|toDo:List<string>|+AddTask()|();(task:string)(toDo:List<string>)]
+
+[+Assignment|-name:string;-dueDate:DateTime|+ChangeDueDate()|(name:string, dueDate:DateTime)]
+[+Deadline|-name:string;-dueDate:DateTime|+ChangeDueDate()|(name:string, dueDate:DateTime)]
+
+[+Account|-name:string||(name:string)]
+[+Budget|-maxAmount||(maxAmount:double)]
+[+Payment|-name:string;-payDate:DateTime||(name:string, payDate:DateTime)]
+
+[+Habit|-name:string|+DailyHabitComplete()|(name:string)]
+
+[+Meal|-name:string;-ingredients:List<String>;-recipe(string)|+AddRecipe(recipe:string)|(name:string, ingredients:List<String>);(name:string, ingredients:List<String>, recipe:string)]
+[+GroceryList|items:SortedList<string,string>|+AddItem(type:string, item:string)|();(type:string, item:string);(items:SortedList<string, string>)]
+
+
+// CONNECTIONS
+[+ToDoList] <- [+NavBar]
+[+Deadline] <- [+NavBar]
+
+[+Assignment] <- [+Agenda]
+[+Deadline] <- [+Agenda]
+
+[+Account] <- [+FinanceTracker]
+[+Budget] <- [+FinanceTracker]
+[+Payment] <- [+FinanceTracker]
+
+[+Habit] <- [+HabitTracker]
+
+[+Meal] <- [+MealPlanner]
+[+GroceryList] <- [+MealPlanner]
+
+[+NavBar] <- [+Agenda]
+[+NavBar] <- [+FinanceTracker]
+[+NavBar] <- [+HabitTracker]
+[+NavBar] <- [+MealPlanner]
