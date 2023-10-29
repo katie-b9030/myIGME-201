@@ -1,0 +1,17 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+// There should be at least 1 abstract class, 1 property, 1 abstract method,
+// 1 virtual method, 2 derived child classes and 2 interfaces
+
+[]
+[]
+[]
+[]
+[]
+
+[] <-.- []
+[] <-.- []
+[] <-.- []
+[] <-.- []

@@ -35,27 +35,14 @@ namespace Unit2ExamTests
         static void Main(string[] args)
         {
 
-            (double, double, double) wxyVals;
-            SortedList<(double, double, double), double> equationVals = new SortedList<(double, double, double), double>();
-            double dW, dX, dY, dZ;
-            for (dW = -2; dW <= 0; dW += 0.2)
+            SortedList<string, DateTime> friendBirthdays = new SortedList<string, DateTime>();
+            foreach (string friend in friendBirthdays.Keys)
             {
-                dW = Math.Round(dW, 1);
-                for (dX = -1; dX <= 1; dX += 0.1)
-                {
-                    dX = Math.Round(dX, 1);
-                    for (dY = 0; dY <= 4; dY += 0.1)
-                    {
-                        dY = Math.Round(dY, 1);
-                        wxyVals = (dW, dX, dY);
+                DateTime birthdate = friendBirthdays[friend];
 
-                        dZ = 4 * dY * dY * dY + 2 * dX * dX - 8 * dW + 7;
-                        dZ = Math.Round(dZ, 3);
-                        equationVals.Add(wxyVals, dZ);
-
-                    }
-                }
+                Console.WriteLine(friend + "’s birthday is on " + birthdate.ToString("MM/dd/yyyy"));
             }
+
         }
     }
 
