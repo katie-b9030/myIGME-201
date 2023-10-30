@@ -2,16 +2,13 @@
 // {generate:true}
 // {direction:topDown}
 
-// There should be at least 1 abstract class, 1 property, 1 abstract method,
-// 1 virtual method, 2 derived child classes and 2 interfaces
+[+I:PlaySong|Play();Stop()]
+[+I:Instrument|Repair();Tune()]
+[+A:Stringed|-numStrings:int;+usesBow:bool;+usesPick:bool;+isTuned:bool;+needsRepairs:bool|+NumStrings:int:r;+Play():v;+Stop():v;+Repair();+Tune():a|();(numStrings:int, usesBow:bool, usesPick:bool)]
+[+Guitar|+isElectric:bool|+Tune():o|():base(6, false, true);(isElectric:bool, numStrings:int):base(numStrings, false, true)]
+[+Violin||+Tune():o|():base(4, true, false);(numStrings:int):base(numStrings, true, false)]
 
-[]
-[]
-[]
-[]
-[]
-
-[] <-.- []
-[] <-.- []
-[] <-.- []
-[] <-.- []
+[+I:PlaySong] ^ [+A:Stringed]
+[+I:Instrument] ^ [+A:Stringed]
+[+A:Stringed] <-.- [+Guitar]
+[+A:Stringed] <-.- [+Violin]
