@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Unit2Exam_Q14
 {
+
+    /* Class: Friend
+     * Author: Katie Bogart
+     * Purpose: creates a friend
+     * Restrictions: None
+     */
     public class Friend
     {
         public string name;
@@ -27,6 +33,11 @@ namespace Unit2Exam_Q14
         }
     }
 
+    /* Class: Program
+     * Author: Katie Bogart
+     * Purpose: Establishes the main
+     * Restrictions: None
+     */
     class Program
     {
 

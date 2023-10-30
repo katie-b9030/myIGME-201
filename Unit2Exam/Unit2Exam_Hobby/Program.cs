@@ -6,18 +6,33 @@ using System.Threading.Tasks;
 
 namespace Unit2Exam_Hobby
 {
+    /* Interface: PlaySong
+     * Author: Katie Bogart
+     * Purpose: 
+     * Restrictions: None
+     */
     public interface PlaySong
     {
         void Play();
         void Stop();
     }
 
+    /* Interface: Instrument
+     * Author: Katie Bogart
+     * Purpose: 
+     * Restrictions: None
+     */
     public interface Instrument
     {
         void Repair();
         void Tune();
     }
 
+    /* Class: Stringed
+     * Author: Katie Bogart
+     * Purpose: sets up the framework for a stringed instrument
+     * Restrictions: None
+     */
     public abstract class Stringed : PlaySong, Instrument
     {
         private int numStrings;
@@ -66,6 +81,11 @@ namespace Unit2Exam_Hobby
         }
     }
 
+    /* Class: Guitar
+     * Author: Katie Bogart
+     * Purpose: Creates an instance of a Guitar
+     * Restrictions: None
+     */
     public class Guitar : Stringed
     {
         public bool isElectric;
@@ -86,6 +106,11 @@ namespace Unit2Exam_Hobby
         }
     }
 
+    /* Class: Violin
+     * Author: Katie Bogart
+     * Purpose: Creates an instance of a Violin
+     * Restrictions: None
+     */
     public class Violin : Stringed
     { 
 
@@ -105,6 +130,11 @@ namespace Unit2Exam_Hobby
         }
     }
 
+    /* Class: Program
+     * Author: Katie Bogart
+     * Purpose: Establishes MyMethod and Main
+     * Restrictions: None
+     */
     internal class Program
     {
         static void MyMethod(object obj)
