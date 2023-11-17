@@ -73,6 +73,29 @@ namespace Dyscord
             webBrowser1.Visible = true;
             convRichTextBox.SendToBack();
         }
+        private void SendButton__Click(object sender, EventArgs e)
+        {
+            if (targetIp.Length > 0)
+            {
+                IPAddress ipAddress = IPAddress.Parse(this.targetIp);
+                IPEndPoint remoteEndPoint = new IPEndPoint(ipAddress, this.targetPort);
+
+                Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                server.Connect(remoteEndPoint);
+                Stream netStream = new NetworkStream(server);
+                StreamWriter writer = new StreamWriter(netStream);
+
+                string msg = userTextBox.Text + ": " + msgRichTextBox.Text;
+                writer.Write(msg.ToCharArray(), 0, msg.Length);
+
+                writer.Close();
+                netStream.Close();
+                server.Close();
+
+                this.convRichTextBox.Text += "> " + this.targetUser + ": " + msgRichTextBox.Text + "\n";
+                msgRichTextBox.Clear();
+            }
+        }
 
         private void WebBrowser1__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
@@ -101,30 +124,6 @@ namespace Dyscord
 
             webBrowser1.Visible = false;
             webBrowser1.SendToBack();
-        }
-
-        private void SendButton__Click(object sender, EventArgs e)
-        {
-            if (targetIp.Length > 0)
-            {
-                IPAddress ipAddress = IPAddress.Parse(this.targetIp);
-                IPEndPoint remoteEndPoint = new IPEndPoint(ipAddress, this.targetPort);
-
-                Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                server.Connect(remoteEndPoint);
-                Stream netStream = new NetworkStream(server);
-                StreamWriter writer = new StreamWriter(netStream);
-
-                string msg = userTextBox.Text + ": " + msgRichTextBox.Text;
-                writer.Write(msg.ToCharArray(), 0, msg.Length);
-
-                writer.Close();
-                netStream.Close();
-                server.Close();
-
-                this.convRichTextBox.Text += "> " + this.targetUser + ": " + msgRichTextBox.Text + "\n";
-                msgRichTextBox.Clear();
-            }
         }
 
         private void ExitButton__Click(object sender, EventArgs e)
