@@ -171,7 +171,8 @@ namespace LinkedList
             LinkedList<object> linkedList = new LinkedList<object>();
 
             // 2. Your code here
-            Button1__Click(sender, e);
+            object[] digits = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            linkedList = new LinkedList<object>(digits);
 
             // 3. using example #18, copy the linkedList to reverseLinkedList in reverse order
             // so that reverseLinkedList goes from 10 to 1
@@ -183,8 +184,10 @@ namespace LinkedList
 
             while (linkedListNode != null)
             {
-                reverseLinkedList.AddLast(linkedListNode);
+                LinkedListNode<object> linkedListNodeAdd = linkedListNode;
                 linkedListNode = linkedListNode.Previous;
+                linkedList.Remove(linkedListNodeAdd);
+                reverseLinkedList.AddLast(linkedListNodeAdd);
             }
 
             // 5. then call the visualizer
