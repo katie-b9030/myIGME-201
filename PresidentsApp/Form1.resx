@@ -126,18 +126,18 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAVrwAAFa8AecpqpEAAAI3SURBVDhPdZPNS1tREMVHxbTRSERwIUoTBBEXirpQBGlp
-        KA2ICG7cuRBBcS2uJMVCiRq6cNFaBEFEEP8DrbXfSWwEEesHWmrV0k1rqiiKcZH+Ove9pG1KO3B4M2/O
-        uW/mzjx5JyLLijeKsOK54pXI7ahIICbyWJ/3NPa9SOUNz/CNLkP8TORaROTBx6amr0cDA5wGAhz19LBX
-        V/dNDwlq3vlP8aLIjfdFRduJ+Xm4uIBEAg4PYWsLlpZI9Pez4XbvKM/zS2wcLem6CvctYjIJs7MwMQHT
-        0zA4CF1dEApBby+b+fmfle80Onmp0FKDybExiMdhchIiEZvc0gJaPnNz4PNBWxs/ampQfsjcgbmcm/vl
-        5edEo7ZgYQHL1tehshK2t+14fByys8Ht5kDk0lyiKTt43NoKi4tQVQUeD9ZBxkwLxlZXobYWRCycKFQ3
-        LLGsrCenHR1gkEpSUmKL0lZW9junOFOsiIzLcm5u8MTrhZwcO1lfDysrKVXKwmHQXtPi1JdHTM+39kXO
-        0wlGR23B7i40NsLamh0PD9t5l4sDh8P0fMeMyWzOSDItdjhsYnW1HVdUwNCQ7Tc0kOzsJOpwPDSbaM1Z
-        HeeGyKFF+B/6+qz5b3o8X5ZE8nRcGRvm1QN2rtJkM5biYmhvh6kprmZm2Cwt/fBUpNwIjebv3c7THR7Z
-        E/keLyzkrLmZeHc3n/z+Y30f0g+4XitPfQsZ4j/+qrs6haFYQcEjzd3XLfRrqfI2xbPFIj8BpmbDE931
-        yxkAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAABW
+        uwAAVrsBtW0M7gAAAjdJREFUOE91k81LW1EQxUfFtNFIRHAhShMEEReKulAEaWkoDYgIbty5EEFxLa4k
+        xUKJGrpw0VoEQUQQ/wOttd9JbAQR6wdaatXSTWuqKIpxkf46972kbUo7cHgzb865b+bOPHknIsuKN4qw
+        4rnilcjtqEggJvJYn/c09r1I5Q3P8I0uQ/xM5FpE5MHHpqavRwMDnAYCHPX0sFdX900PCWre+U/xosiN
+        90VF24n5ebi4gEQCDg9hawuWlkj097Phdu8oz/NLbBwt6boK9y1iMgmzszAxAdPTMDgIXV0QCkFvL5v5
+        +Z+V7zQ6eanQUoPJsTGIx2FyEiIRm9zSAlo+c3Pg80FbGz9qalB+yNyBuZyb++Xl50SjtmBhAcvW16Gy
+        Era37Xh8HLKzwe3mQOTSXKIpO3jc2gqLi1BVBR4P1kHGTAvGVlehthZELJwoVDcssaysJ6cdHWCQSlJS
+        YovSVlb2O6c4U6yIjMtybm7wxOuFnBw7WV8PKyspVcrCYdBe0+LUl0dMz7f2Rc7TCUZHbcHuLjQ2wtqa
+        HQ8P23mXiwOHw/R8x4zJbM5IMi12OGxidbUdV1TA0JDtNzSQ7Owk6nA8NJtozVkd54bIoUX4H/r6rPlv
+        ejxflkTydFwZG+bVA3au0mQzluJiaG+HqSmuZmbYLC398FSk3AiN5u/dztMdHtkT+R4vLOSsuZl4dzef
+        /P5jfR/SD7heK099CxniP/6quzqFoVhBwSPN3dct9Gup8jbFs8UiPwGmZsMT3fXLGQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
 </root>

@@ -24,7 +24,7 @@ namespace PresidentsApp
             //text box keypress event handler
             //text box hover event handler
             //text box leave event handler
-            foreach (TextBox tb in this.Controls)
+            foreach (TextBox tb in presidentNums.Keys)
             {
                 tb.Text = "0";
                 tb.KeyPress += new KeyPressEventHandler(TextBox__KeyPress);
@@ -47,6 +47,7 @@ namespace PresidentsApp
             timer1.Interval = 500;
             //picturebox shows benjamin harrison image
             pictureBox1.ImageLocation = "https://people.rit.edu/dxsigm/BenjaminHarrison.jpeg";
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             //webbrowser shows benjamin harrison wikipedia
             this.webBrowser1.Navigate("https://en.m.wikipedia.org/wiki/Benjamin_Harrison");
             this.webbrowserGroupBox.Text = "https://en.m.wikipedia.org/wiki/Benjamin_Harrison";
@@ -118,7 +119,7 @@ namespace PresidentsApp
             //else if (all text box values are correct)
             else
             {
-                foreach(TextBox tb in this.Controls)
+                foreach(TextBox tb in presidentNums.Keys)
                 {
                     if (tb.Text == "0")
                     {
@@ -128,7 +129,7 @@ namespace PresidentsApp
                 //    stop timer
                 timer1.Stop();
                 //    change webbrowser to fireworks gif
-                webBrowser1.Navigate("https://media/giphy.com/media/TmT51OyQLFD7a/giphy.gif");
+                webBrowser1.Navigate("https://media.giphy.com/media/TmT51OyQLFD7a/giphy.gif");
                 exitButton.Enabled = true;
             }
         }
@@ -324,7 +325,7 @@ namespace PresidentsApp
         {
             //display message "Professor Schuch for President!"
             HtmlElement link = (HtmlElement)sender;
-            toolTip.Show("Professor Schuch for President!", this, MousePosition.X+10, MousePosition.Y+10);
+            toolTip.Show("Professor Schuch for President!", this, MousePosition.X, MousePosition.Y);
         }
 
         private void HtmlElement__MouseLeave(object sender, HtmlElementEventArgs e)
@@ -347,7 +348,7 @@ namespace PresidentsApp
                 //    stop timer
                 timer1.Stop();
                 //    reset all text box vals to 0
-                foreach (TextBox tb in this.Controls)
+                foreach (TextBox tb in presidentNums.Keys)
                 {
                     tb.Text = "0";
                 }
@@ -365,7 +366,6 @@ namespace PresidentsApp
         private void PictureBox1__MouseEnter(object sender, EventArgs e)
         {
             //make image bigger
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.Size = new Size(231, 283);
         }
 
@@ -379,7 +379,7 @@ namespace PresidentsApp
         {
             if (pictureBox2.Visible)
             {
-                toolTip.Show("That is the wrong number", this, MousePosition.X+10, MousePosition.Y+10);
+                toolTip.Show("That is the wrong number", this, MousePosition.X, MousePosition.Y);
             }
         }
 

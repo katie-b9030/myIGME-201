@@ -489,7 +489,7 @@
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(700, 16);
             // 
             // pictureBox2
             // 
@@ -505,6 +505,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 611);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.exitButton);
