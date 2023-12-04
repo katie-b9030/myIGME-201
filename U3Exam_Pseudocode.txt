@@ -1,0 +1,163 @@
+Controls --------------------------------------------------------------------------
+form - "Presidents"
+radio buttons (16) - one for each of the following presidents
+    Benjamin Harrison
+    FDR
+    Bill Clinton
+    James Buchanan
+    Franklin Pierce
+    George W Bush
+    Barack Obama
+    JFK
+    William McKinley
+    Ronald Reagan
+    Dwight D Eisenhower
+    Martin VanBurien
+    George Washington
+    John Adams
+    Theodore Roosevelt
+    Thomas Jefferson
+text boxes (16) - one to input the # of each of the above presidents
+webbrowser control - to display the info page of each president (url as title)
+picture box - to display a picture of each president
+filter group box - to hold filter radio buttons
+web browser group box - to hold webbrowser control
+radio buttons (5) - one for each of the below filters
+    All
+    Democrat
+    Republican
+    Democratic-Republican
+    Federalist
+status strip - to hold progress bar
+timer control - count down from 2 minutes
+progress bar - step every half second
+exit button - to exit the application
+picture box - to display an error icon
+
+
+Psuedocode -----------------------------------------------------------------------
+form constructor
+{
+    all text box vals set to 0
+    exit button disabled
+    benjamin harrison checked (other president radio buttons unchecked)
+    filter "all" checked (other filters unchecked)
+    progress bar max = 240
+    progress bar val = 240
+    progress bar step = 1
+    timer interval = 500
+    picturebox shows benjamin harrison image
+    webbrowser shows benjamin harrison wikipedia
+    error icon not visible
+
+    text box keypress event handler
+    text box hover event handler
+    text box leave event handler
+    president radio button click event handler
+    webbrowser document completed event handler
+    filter radio button click event handler
+    exit button click event handler
+    timer tick event handler
+    error icon hover event handler
+    image hover event handler
+}
+
+TextBox__Leave
+{
+    if (text box value has not 0 and is incorrect)
+    {
+        show error icon
+    }
+    else if (all text box values are correct)
+    {
+        stop timer
+        change webbrowser to fireworks gif
+    }
+}
+
+TextBox__KeyPress
+{
+    if (timer not started)
+    {
+        start the timer
+    }
+
+    if (typed in not digit or backspace)
+    {
+        character is handled (put nothing in the box)
+    }
+}
+
+TextBox__MouseHover
+{
+    display ?what #
+}
+
+PresidentRadioButton__Click
+{
+    change webbrowser to clicked president's wikipedia
+    change groupbox text to wikipedia link
+}
+
+WebBrowser__DocumentCompleted
+{
+    get array of anchor tags
+    link hover event handler
+}
+
+FilterRadioButton__Click
+{
+    if (all)
+    {
+        show all president buttons
+    }
+    else if (Democrat)
+    {
+        show only democrat butons
+    }
+    else if (Republican)
+    {
+        show only republican buttons
+    }
+    else if (Democratic-Republican){
+        show only democratic-republican buttons
+    }
+    else
+    {
+        show only federalist buttons
+    }
+}
+
+ExitButton__Click
+{
+    close application
+}
+
+Timer__Tick
+{
+    if (timer is at 0)
+    {
+        stop timer
+        reset all text box vals to 0
+        set progress bar value to 240
+    }
+
+    else {
+        decrease progress bar
+    }
+}
+
+?error icon __MouseHover
+{
+    show wrong number message
+}
+
+Link__MouseHover
+{
+    display message "Professor Schuch for President!"
+}
+
+Image__MouseHover
+{
+    make image bigger
+}
