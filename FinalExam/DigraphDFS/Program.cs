@@ -25,7 +25,7 @@ namespace DigraphDFS
 
     /* Class: Program
      * Author: Katie Bogart
-     * Purpose: 
+     * Purpose: initialize digraphs and DFS
      * Restrictions: None
      */
     internal class Program
