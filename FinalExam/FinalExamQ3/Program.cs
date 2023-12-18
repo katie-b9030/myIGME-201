@@ -25,7 +25,8 @@ namespace FinalExamQ3
      */
     internal class Program
     {
-        static int[,] digraphWeights = new int[,]
+        // adjacency matrix for digraph
+        static int[,] digraphWeightsMatrix = new int[,]
         {        /*  red  orange  yellow   green   blue   indigo  violet  grey */
             /*red*/{ -1,    -1,     -1,     -1,     -1,      1,     -1,      5 },
          /*orange*/{ -1,    -1,     -1,     -1,     -1,     -1,      1,     -1 },
@@ -36,6 +37,19 @@ namespace FinalExamQ3
          /*violet*/{ -1,    -1,      1,     -1,     -1,     -1,     -1,     -1 },
            /*grey*/{ -1,     1,     -1,     -1,      0,     -1,     -1,     -1 },
         };
+        // adjacency list for digraph
+        static List<List<int>> digraphWeightsList = new List<List<int>>
+        {        /*  red  orange  yellow   green   blue   indigo  violet  grey */
+            /*red*/ new List<int>{ -1,    -1,     -1,     -1,     -1,      1,     -1,      5 },
+         /*orange*/ new List<int>{ -1,    -1,     -1,     -1,     -1,     -1,      1,     -1 },
+         /*yellow*/ new List<int>{ -1,    -1,     -1,      6,     -1,     -1,     -1,     -1 },
+          /*green*/ new List<int>{ -1,    -1,     -1,     -1,     -1,     -1,     -1,     -1 },
+           /*blue*/ new List<int>{ -1,    -1,     -1,     -1,     -1,      1,     -1,      0 },
+         /*indigo*/ new List<int>{ -1,    -1,      8,     -1,      1,     -1,     -1,     -1 },
+         /*violet*/ new List<int>{ -1,    -1,      1,     -1,     -1,     -1,     -1,     -1 },
+           /*grey*/ new List<int>{ -1,     1,     -1,     -1,      0,     -1,     -1,     -1 },
+        };
+
 
         /* Method: Main
          * Purpose: 
@@ -43,7 +57,7 @@ namespace FinalExamQ3
          */
         static void Main(string[] args)
         {
-
+            
         }
     }
 }
