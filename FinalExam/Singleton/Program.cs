@@ -9,9 +9,14 @@ using Newtonsoft.Json.Linq;
 
 namespace Singleton
 {
+    /* Class: Program
+    * Author: Katie Bogart
+    * Purpose: Hold Player Settings Values
+    * Restrictions: None
+    */
     public class PlayerSettings
     {
-        public string PlayerName
+        public string Player_Name
         {
             get; set;
         }
@@ -27,18 +32,28 @@ namespace Singleton
         {
             get; set;
         }
-        public string LicenseKey
+        public string License_Key
         {
             get; set;
         }
     }
 
+    /* Class: Program
+    * Author: Katie Bogart
+    * Purpose: Initialize LoadSettings and SaveSettings
+    * Restrictions: None
+    */
     public interface IPlayerSettingsClass
     {
         PlayerSettings LoadSettings(string settingsFileName);
         void SaveSettings(PlayerSettings settings, string fileToSaveTo);
     }
 
+    /* Class: Program
+    * Author: Katie Bogart
+    * Purpose: Create a single instance of PlayerSettingsClass that can LoadSettings and SaveSettings
+    * Restrictions: None
+    */
     public class PlayerSettingsClass : IPlayerSettingsClass
     {
 
@@ -54,6 +69,12 @@ namespace Singleton
 
         }
 
+        /* Method: LoadSettings
+         * Purpose: Read Json settings
+         *          Deserialize Settings
+         *          return settings
+         * Restrictions: None
+         */
         public PlayerSettings LoadSettings(string settingsFilePath)
         {
             
@@ -70,6 +91,10 @@ namespace Singleton
             }
         }
 
+        /* Method: SaveSettings
+         * Purpose: Write Settings to a file
+         * Restrictions: None
+         */
         public void SaveSettings(PlayerSettings settings, string fileToSaveTo)
         {
             try
@@ -83,9 +108,19 @@ namespace Singleton
             
         }
     }
-
+    /* Class: Program
+    * Author: Katie Bogart
+    * Purpose: call Main
+    * Restrictions: None
+    */
     internal class Program
     {
+        /* Method: Main
+         * Purpose: Pull instance of singleton
+         *          call load settings with filepath
+         *          call save settings with filepath
+         * Restrictions: None
+         */
         static void Main(string[] args)
         {
             PlayerSettingsClass playerSettingsClass = PlayerSettingsClass.GetInstance();
@@ -93,8 +128,14 @@ namespace Singleton
             string filePath = "C:\\Users\\kathe\\source\\repos\\katie-b9030\\myIGME-201\\FinalExam\\PlayerSettings.json";
 
             settings = playerSettingsClass.LoadSettings(filePath);
-            Console.WriteLine(settings.ToString());
-            
+
+            // pulled code from ChatGPT to confirm if settings loaded correctly
+            Console.WriteLine($"Player Name: {settings.Player_Name}");
+            Console.WriteLine($"Level: {settings.Level}");
+            Console.WriteLine($"HP: {settings.Hp}");
+            Console.WriteLine($"Inventory: {string.Join(", ", settings.Inventory)}");
+            Console.WriteLine($"License Key: {settings.License_Key}");
+
             playerSettingsClass.SaveSettings(settings, filePath);
         }
     }
