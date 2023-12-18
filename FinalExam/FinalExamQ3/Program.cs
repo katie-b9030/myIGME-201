@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace FinalExamQ3
 {
+    /* Enum: EVertices
+     * Author: Katie Bogart
+     * Purpose: hold the values of the vertices
+     * Restrictions: None
+     */
     enum EVertices
     {
         red,
