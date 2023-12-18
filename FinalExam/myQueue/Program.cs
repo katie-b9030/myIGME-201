@@ -8,7 +8,7 @@ namespace MyQueue
 {
     /* Class: Program
      * Author: Katie Bogart
-     * Purpose: run methods of MyQueue
+     * Purpose: run methods of MyQueue 
      * Restrictions: None
      */
     internal class Program
